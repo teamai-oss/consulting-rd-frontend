@@ -7,6 +7,8 @@ import { fileURLToPath } from 'url'
 
 import { Pages } from './collections/Pages'
 import { Media } from './collections/Media'
+import { Expertises } from './collections/Expertises'
+import { Engineers } from './collections/Engineers'
 import { SiteSettings } from './globals/SiteSettings'
 
 const filename = fileURLToPath(import.meta.url)
@@ -18,7 +20,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Pages, Media],
+  collections: [Pages, Media, Expertises, Engineers],
   globals: [SiteSettings],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',

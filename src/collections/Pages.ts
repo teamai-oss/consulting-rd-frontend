@@ -1,9 +1,13 @@
 import type { CollectionConfig } from 'payload'
+import { revalidateCache } from '../hooks/revalidateCache'
 
 export const Pages: CollectionConfig = {
   slug: 'pages',
   admin: {
     useAsTitle: 'title',
+  },
+  hooks: {
+    afterChange: [revalidateCache],
   },
   fields: [
     {
